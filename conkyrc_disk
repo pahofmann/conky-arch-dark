@@ -102,9 +102,9 @@ conky.config = {
 conky.text = [[
 ${color1}Disk IO:${color2} ${alignr 4}$diskio
 ${color1}${diskiograph 20,195 668ABF}
-Home${color1}: ${color2}${alignr}${fs_free /home}
+Root${color1}: ${color2}${alignr}${fs_free /}
 ${voffset -3}${color1}${fs_bar /}${offset -195}${color3}${execbar echo 0}${color}
-${color1}ichbinnas: ${color2}${alignr}${fs_free /media/nas}
+${color1}ichbinnas: ${color2}${alignr}${fs_free /mnt/nas}
 ${voffset -3}${color1}${fs_bar /media/Hitachi}${offset -195}${color3}${execbar echo 0}${color}
 ${color1}Owncloud (todo): ${color2}${alignr}${fs_free /media/data}
 ${voffset -3}${color1}${fs_bar /media/sdb2}${offset -195}${color3}${execbar echo 0}${color}
