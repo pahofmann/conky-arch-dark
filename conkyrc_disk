@@ -102,11 +102,10 @@ conky.config = {
 conky.text = [[
 ${color1}Disk IO:${color2} ${alignr 4}$diskio
 ${color1}${diskiograph 20,195 668ABF}
-Root${color1}: ${color2}${alignr}${fs_free /}
+root${color1}: ${color2}${alignr}${fs_free /}
 ${voffset -3}${color1}${fs_bar /}${offset -195}${color3}${execbar echo 0}${color}
 ${color1}ichbinnas: ${color2}${alignr}${fs_free /mnt/nas}
 ${voffset -3}${color1}${fs_bar /mnt/nas}${offset -195}${color3}${execbar echo 0}${color}
-${color1}Owncloud (todo): ${color2}${alignr}${fs_free /media/data}
-${voffset -3}${color1}${fs_bar /media/sdb2}${offset -195}${color3}${execbar echo 0}${color}
+${color1}nextcould: ${color2}${alignr}${exec du -hs /home/patrick/nextcloud | cut -f 1}
 ${color1}Trash: ${color2}${alignr}${exec du -hs .local/share/Trash | cut -f 1}
 ]];
