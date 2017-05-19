@@ -1,5 +1,5 @@
 #!/bin/bash
-nohup conky -c conkyrc_clock &
-nohup conky -c conkyrc_disk &
-nohup conky -c conkyrc_net &
-nohup conky -c conkyrc_sys &
+nohup conky -c /home/patrick/.conky/conky-arch-dark/conkyrc_clock &
+nohup conky -c /home/patrick/.conky/conky-arch-dark/conkyrc_disk &
+nohup conky -c /home/patrick/.conky/conky-arch-dark/conkyrc_net &
+nohup conky -c /home/patrick/.conky/conky-arch-dark/conkyrc_sys &

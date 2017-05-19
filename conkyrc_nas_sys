@@ -1,5 +1,6 @@
 conky.config = {
 -- Use Xft?
+
 	use_xft = true,
 	font = 'cure:size=11',
 
@@ -19,7 +20,7 @@ conky.config = {
 	own_window_argb_value = 240,
 
 	draw_graph_borders = false,
-	default_bar_width = 195, default_bar_height = 2,
+	default_bar_width = 195, default_bar_height = 4,
 
 -- Use double buffering (reduces flicker, may not work for everyone)
 	double_buffer = true,
@@ -94,19 +95,23 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 15,
-	gap_y = 740,
+	gap_x = 1000,
+	gap_y = 50,
 
 };
 
 conky.text = [[
-${color1}IP:${color2}${alignr}${execi 400 curl ipinfo.io/ip}
-${color1}W-LAN:${color2}${alignr}${addr wlan0}
-${color1}Up:${color2}${alignr}${upspeed wlan0}
-${color1}${upspeedgraph wlan0 20,195 668ABF}
-${color1}Total: ${color2}${alignr}${totalup wlan0}
-${voffset -5}${color3}${hr}
-${color1}Down:${color2}${alignr}${downspeed wlan0}
-${color1}${downspeedgraph wlan0 20,195 668ABF}
-${color1}Total: ${color2}${alignr}${totaldown wlan0}
+${color1}Kernel:${color2}${alignr}${execi 3600 ssh ichbinnas -C 'uname -r'}
+${color1}UpTime:${color2}${alignr}${execi 3600 ssh ichbinnas -C 'uptime'}
+
+${color1}Cpu:${color2}${alignr}${cpu cpu}%
+${voffset -3}${color1}${cpubar cpu}${offset -195}${color3}${execbar echo 0}${color}
+${color1}${top name 1}${alignr}${color2}${top mem 1}
+${color1}${top name 2}${alignr}${color2}${top mem 2}
+${color1}${top name 3}${alignr}${color2}${top mem 3}
+
+${color1}Ram:${color2}${alignr}$mem
+${voffset -3}${color 668ABF}${membar}${offset -195}${color3}${execbar echo 0}${color}
+${color1}Swap:${color2}${alignr}$swap
+${voffset -3}${color 668ABF}${swapbar}${offset -195}${color3}${execbar echo 0}${color}
 ]];
