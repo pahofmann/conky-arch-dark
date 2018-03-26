@@ -95,8 +95,8 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 15,
-	gap_y = 292,
+	gap_x = 2575,
+	gap_y = 288,
 
 };
 

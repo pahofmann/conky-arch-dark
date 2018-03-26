@@ -94,19 +94,19 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 15,
-	gap_y = 740,
+	gap_x = 2575,
+	gap_y = 733,
 
 };
 
 conky.text = [[
 ${color1}IP:${color2}${alignr}${execi 400 curl ipinfo.io/ip}
-${color1}W-LAN:${color2}${alignr}${addr wlan0}
-${color1}Up:${color2}${alignr}${upspeed wlan0}
-${color1}${upspeedgraph wlan0 20,195 668ABF}
-${color1}Total: ${color2}${alignr}${totalup wlan0}
+${color1}LAN:${color2}${alignr}${addr enp0s31f6}
+${color1}Up:${color2}${alignr}${upspeed enp0s31f6}
+${color1}${upspeedgraph enp0s31f6 20,195 668ABF}
+${color1}Total: ${color2}${alignr}${totalup enp0s31f6}
 ${voffset -5}${color3}${hr}
-${color1}Down:${color2}${alignr}${downspeed wlan0}
-${color1}${downspeedgraph wlan0 20,195 668ABF}
-${color1}Total: ${color2}${alignr}${totaldown wlan0}
+${color1}Down:${color2}${alignr}${downspeed enp0s31f6}
+${color1}${downspeedgraph enp0s31f6 20,195 668ABF}
+${color1}Total: ${color2}${alignr}${totaldown enp0s31f6}
 ]];
