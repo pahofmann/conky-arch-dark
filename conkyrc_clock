@@ -104,5 +104,5 @@ ${color2}${alignc -3}${font DotMatrix:size=20}${time %H:%M}
 ${font}${color 556B2F}${alignc}${voffset -10}${time %A}
 
 ${color1}Date:${color2}${alignr}${time %d.%m.%y}
-${color1}${font}E-Mails:${color2}${alignr}${execi 15 perl /home/patrick/.config/conky/conky-arch/dark/imapCount.pl
+${color1}${font}E-Mails:${color2}${alignr}${execi 15 perl /home/patrick/.config/conky/conky-arch-dark/imapCount.pl
 ]];
