@@ -17,16 +17,16 @@ conky.config = {
 	own_window_type = 'normal',
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_argb_visual = true,
-	own_window_argb_value = 240,
+	own_window_argb_value = 180,
 
 	draw_graph_borders = false,
-	default_bar_width = 195, default_bar_height = 4,
+	default_bar_width = 195, default_bar_height = 10,
 
 -- Use double buffering (reduces flicker, may not work for everyone)
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 480, minimum_height = 5,
+	minimum_width = 200, minimum_height = 5,
 
 	maximum_width = 200,
 
@@ -37,7 +37,7 @@ conky.config = {
 	draw_outline = false,
 
 -- Draw borders around text
-	draw_borders = true,
+	draw_borders = false,
 
 -- Stippled borders?
 	stippled_borders = 0,
@@ -95,23 +95,25 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 1465,
-	gap_y = 360,
+	gap_x = 50,
+	gap_y = 400,
 
+    lua_load = 'conky_sys_draw.lua',
+    lua_draw_hook_pre = 'main',
 };
 
 conky.text = [[
 ${color1}Kernel:${color2}${alignr}$kernel
 ${color1}UpTime:${color2}${alignr}$uptime
 
-${color1}Cpu:${color2}${alignr}${cpu cpu}%
-${voffset -3}${color1}${cpubar cpu}${offset -195}${color3}${execbar echo 0}${color}
-${color1}${top name 1}${alignr}${color2}${top mem 1}
-${color1}${top name 2}${alignr}${color2}${top mem 2}
-${color1}${top name 3}${alignr}${color2}${top mem 3}
+${color1}CPU:${color2}${alignr}${cpu cpu}%
+${offset -195}${color3}${execbar echo 0}${color}
+${color1}${top name 1}${alignr}${color2}${top cpu 1}
+${color1}${top name 2}${alignr}${color2}${top cpu 2}
+${color1}${top name 3}${alignr}${color2}${top cpu 3}
 
-${color1}Ram:${color2}${alignr}$mem
-${voffset -3}${color 668ABF}${membar}${offset -195}${color3}${execbar echo 0}${color}
+${color1}RAM:${color2}${alignr}$mem
+${offset -195}${color3}${execbar echo 0}${color}
 ${color1}Swap:${color2}${alignr}$swap
-${voffset -3}${color 668ABF}${swapbar}${offset -195}${color3}${execbar echo 0}${color}
+${offset -195}${color3}${execbar echo 0}${color}
 ]];

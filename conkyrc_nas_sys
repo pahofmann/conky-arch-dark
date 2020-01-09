@@ -26,7 +26,7 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 480, minimum_height = 5,
+	minimum_width = 200, minimum_height = 5,
 
 	maximum_width = 200,
 

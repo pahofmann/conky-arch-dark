@@ -16,7 +16,7 @@ conky.config = {
 	own_window_type = 'normal',
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_argb_visual = true,
-	own_window_argb_value = 240,
+	own_window_argb_value = 180,
 
 	draw_graph_borders = false,
 	default_bar_width = 195, default_bar_height = 4,
@@ -25,7 +25,7 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 480, minimum_height = 5,
+	minimum_width = 200, minimum_height = 5,
 
 	maximum_width = 200,
 
@@ -94,19 +94,22 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
-	gap_x = 1465,
-	gap_y = 660,
+	gap_x = 50,
+	gap_y = 653,
+
+
+    lua_load = 'conky_disk_draw.lua',
+    lua_draw_hook_pre = 'main',
 
 };
 
 conky.text = [[
 ${color1}Disk IO:${color2} ${alignr 4}$diskio
 ${color1}${diskiograph 20,195 668ABF}
-
 root${color1}: ${color2}${alignr}${fs_free /}
-${voffset -3}${color1}${fs_bar /}${offset -195}${color3}${execbar echo 0}${color}
+${offset -195}${color3}${execbar echo 0}${color}
 ${color1}ichbinnas: ${color2}${alignr}${fs_free /media/nas}
 ${voffset -3}${color1}${fs_bar /media/nas}${offset -195}${color3}${execbar echo 0}${color}
 ${color1}nextcould: ${color2}${alignr}${exec du -hs /home/patrick/nextcloud | cut -f 1}
-${color1}Trash: ${color2}${alignr}${exec du -hs /home/patrick/.local/share/Trash | cut -f 1}
+${color1}Trash: ${color2}${alignr}${exec du -hs /home/patrick/.local/share/Trash/files/ | cut -f 1}
 ]];

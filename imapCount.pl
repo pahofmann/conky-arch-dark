@@ -7,11 +7,11 @@ use strict;
 use Mail::IMAPClient;
 use IO::Socket::SSL;
 
-my $username = 'username'; # example.username@gmail.com
-my $password = 'password';
+my $username = 'test@example.com'; # example.username@gmail.com
+my $password = 'superSecret';
 
 my $socket = IO::Socket::SSL->new(
-   PeerAddr => 'imap.zoho.com',
+   PeerAddr => 'imap.server.com',
    PeerPort => 993,
   )
   or die "socket(): $@";
