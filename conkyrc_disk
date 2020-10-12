@@ -19,15 +19,15 @@ conky.config = {
 	own_window_argb_value = 180,
 
 	draw_graph_borders = false,
-	default_bar_width = 195, default_bar_height = 4,
+	default_bar_width = 395, default_bar_height = 4,
 
 -- Use double buffering (reduces flicker, may not work for everyone)
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 200, minimum_height = 5,
+	minimum_width = 400, minimum_height = 5,
 
-	maximum_width = 200,
+	maximum_width = 400,
 
 -- Draw shades?
 	draw_shades = false,
@@ -95,7 +95,7 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 	gap_x = 50,
-	gap_y = 653,
+	gap_y = 1230,
 
 
     lua_load = 'conky_disk_draw.lua',
@@ -105,11 +105,13 @@ conky.config = {
 
 conky.text = [[
 ${color1}Disk IO:${color2} ${alignr 4}$diskio
-${color1}${diskiograph 20,195 668ABF}
+${color1}${diskiograph 20,395 668ABF}
 root${color1}: ${color2}${alignr}${fs_free /}
 ${offset -195}${color3}${execbar echo 0}${color}
-${color1}ichbinnas: ${color2}${alignr}${fs_free /media/nas}
-${voffset -3}${color1}${fs_bar /media/nas}${offset -195}${color3}${execbar echo 0}${color}
+${color1}ichbinnas - data: ${color2}${alignr}${fs_free /mnt/data}
+${offset -195}${color3}${execbar echo 0}${color}
+${color1}ichbinnas - big data: ${color2}${alignr}${fs_free /mnt/big-data}
+${offset -195}${color3}${execbar echo 0}${color}
 ${color1}nextcould: ${color2}${alignr}${exec du -hs /home/patrick/nextcloud | cut -f 1}
 ${color1}Trash: ${color2}${alignr}${exec du -hs /home/patrick/.local/share/Trash/files/ | cut -f 1}
 ]];
