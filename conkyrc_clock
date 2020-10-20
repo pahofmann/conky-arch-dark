@@ -95,7 +95,7 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 	gap_x = 50,
-	gap_y = 426,
+	gap_y = 326,
 
 };
 
@@ -106,5 +106,8 @@ ${font}${color 556B2F}${alignc}${voffset -10}${time %A}
 ${color1}Date:${color2}${alignr}${time %d.%m.%y}
 ${color1}${font}Battery:${color2}${alignr}${battery_percent BAT0}%
 ${color1}${execi 3 acpi | awk '{print $3}' | sed 's/,//g'}:${color2}${alignr}${execi 3 acpi | awk '{print $5}' | cut -c 2}h:${execi 3 acpi | awk '{print $5}' | cut -c 4-5}m
-${color1}${font}E-Mails:${color2}${alignr}${execi 15 perl /home/patrick/.config/conky/imapCount.pl
+${color1}${font}E-Mails:${color2}${alignr}${execi 15 perl /home/patrick/.config/conky/imapCount.pl}
+${font}${color 556B2F}${alignc}Todoist
+${color1}${font}Work:${color2}${alignr} ${execi 60 python3 /home/patrick/.config/conky/getTodoistTasks.py Work}
+${color1}${font}Home:${color2}${alignr} ${execi 60 python3 /home/patrick/.config/conky/getTodoistTasks.py Personal}
 ]];

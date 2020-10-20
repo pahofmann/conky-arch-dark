@@ -14,9 +14,11 @@ Download files
 
 If you want to use the email count set your your uername, password and smtp server in `imapCount.pl`.
 
+If you want to use Todist task counter, add token to getTodoistTasks.py, change your project names in conkyrc_clock.
+
 Chang file system path in `conkyrc_disk`.
 
-Change network interface names in `conkyrc_ney`.
+Change network interface names in `conkyrc_net`.
 
 Start with `start_conky.sh` or add it to autostart.
 
