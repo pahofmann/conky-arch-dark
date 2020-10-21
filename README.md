@@ -2,7 +2,7 @@
 Dark conky config showing four panels for clock, system, network and disk statistics.
 Now with stylish bars thanks to [conky-draw](https://github.com/fisadev/conky-draw)!
 
-This config is made for 4k resolution, but can easly be scaled.
+This config is made for Notebook with 4k resolution, but can easly be scaled.
 
 # Installation
 
