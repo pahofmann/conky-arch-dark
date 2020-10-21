@@ -25,9 +25,8 @@ conky.config = {
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 400, minimum_height = 5,
-
-	maximum_width = 400,
+	minimum_width = 200, minimum_height = 5,
+	maximum_width = 200,
 
 -- Draw shades?
 	draw_shades = false,
@@ -95,7 +94,7 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 	gap_x = 50,
-	gap_y = 326,
+	gap_y = 226,
 
 };
 
