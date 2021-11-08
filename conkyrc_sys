@@ -14,21 +14,21 @@ conky.config = {
 -- Create own window instead of using desktop (required in nautilus)
 	own_window = true,
 	own_window_transparent = false,
-	own_window_type = 'dock',
+	own_window_type = 'normal',
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_argb_visual = true,
 	own_window_argb_value = 180,
 
 	draw_graph_borders = false,
-	default_bar_width = 195, default_bar_height = 10,
+	default_bar_width = 295, default_bar_height = 20,
 
 -- Use double buffering (reduces flicker, may not work for everyone)
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 200, minimum_height = 5,
+	minimum_width = 300, minimum_height = 5,
 
-	maximum_width = 200,
+	maximum_width = 300,
 
 -- Draw shades?
 	draw_shades = false,
@@ -96,7 +96,7 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 	gap_x = 50,
-	gap_y = 444,
+	gap_y = 445,
 
     lua_load = 'conky_sys_draw.lua',
     lua_draw_hook_pre = 'main',
@@ -107,13 +107,13 @@ ${color1}Kernel:${color2}${alignr}$kernel
 ${color1}UpTime:${color2}${alignr}$uptime
 
 ${color1}CPU:${color2}${alignr}${cpu cpu}%
-${offset -195}${color3}${execbar echo 0}${color}
+${offset -5}${color3}${execbar echo 0}${color}
 ${color1}${top name 1}${alignr}${color2}${top cpu 1}
 ${color1}${top name 2}${alignr}${color2}${top cpu 2}
 ${color1}${top name 3}${alignr}${color2}${top cpu 3}
 
 ${color1}RAM:${color2}${alignr}$mem
-${offset -195}${color3}${execbar echo 0}${color}
+${offset -5}${color3}${execbar echo 0}${color}
 ${color1}Swap:${color2}${alignr}$swap
-${offset -195}${color3}${execbar echo 0}${color}
+${offset -5}${color3}${execbar echo 0}${color}
 ]];

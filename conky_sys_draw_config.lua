@@ -8,8 +8,8 @@ elements = {
     {
         kind = 'bar_graph',
         conky_value = 'cpu',
-        from = {x = 5, y = 85},
-        to = {x = 195, y = 85},
+        from = {x = 5, y = 65},
+        to = {x = 295, y = 65},
     
         background_thickness = 5,
         background_color = 0x00E5FF,
@@ -35,8 +35,8 @@ elements = {
     {
         kind = 'bar_graph',
         conky_value = 'memperc',
-        from = {x = 5, y = 195},
-        to = {x = 195, y = 195},
+        from = {x = 5, y = 245},
+        to = {x = 295, y = 245},
     
         background_thickness = 5,
         background_color = 0x00E5FF,
@@ -62,8 +62,8 @@ elements = {
     {
         kind = 'bar_graph',
         conky_value = 'swapperc',
-        from = {x = 5, y = 440},
-        to = {x = 195, y = 440},
+        from = {x = 5, y = 295},
+        to = {x = 295, y = 295},
         background_thickness = 5,
         background_color = 0x00E5FF,
     

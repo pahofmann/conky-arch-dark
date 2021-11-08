@@ -13,21 +13,21 @@ conky.config = {
 -- Create own window instead of using desktop (required in nautilus)
 	own_window = true,
 	own_window_transparent = false,
-	own_window_type = 'dock',
+	own_window_type = 'normal',
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_argb_visual = true,
 	own_window_argb_value = 180,
 
 	draw_graph_borders = false,
-	default_bar_width = 195, default_bar_height = 4,
+	default_bar_width = 295, default_bar_height = 4,
 
 -- Use double buffering (reduces flicker, may not work for everyone)
 	double_buffer = true,
 
 -- Minimum size of text area
-	minimum_width = 200, minimum_height = 5,
+	minimum_width = 300, minimum_height = 5,
 
-	maximum_width = 200,
+	maximum_width = 300,
 
 -- Draw shades?
 	draw_shades = false,
@@ -95,18 +95,27 @@ conky.config = {
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
 	gap_x = 50,
-	gap_y = 918,
+	gap_y = 1054,
 
 };
 
 conky.text = [[
-${color1}IP:${color2}${alignr}${execi 400 curl ipinfo.io/ip}
-${color1}LAN:${color2}${alignr}${addr enxcc483aa51f2e}
-${color1}Up:${color2}${alignr}${upspeed enxcc483aa51f2e}
-${color1}${upspeedgraph enxcc483aa51f2e 20,195 668ABF}
-${color1}Total: ${color2}${alignr}${totalup enxcc483aa51f2e}
+${color1}IP:${color2}${alignr}${execi 400 curl ipinfo.io/ip}${if_up wlp5s0}
+${color1}WLAN:${color2}${alignr}${addr wlp5s0}
+${color1}Up:${color2}${alignr}${upspeed wlp5s0}
+${color1}${upspeedgraph wlp5s0 20,295 668ABF}
+${color1}Total: ${color2}${alignr}${totalup wlp5s0}
 ${voffset -5}${color3}${hr}
-${color1}Down:${color2}${alignr}${downspeed enxcc483aa51f2e}
-${color1}${downspeedgraph enxcc483aa51f2e 20,195 668ABF}
-${color1}Total: ${color2}${alignr}${totaldown enxcc483aa51f2e}
+${color1}Down:${color2}${alignr}${downspeed wlp5s0}
+${color1}${downspeedgraph wlp5s0 20,295 668ABF}
+${color1}Total: ${color2}${alignr}${totaldown wlp5s0}${endif}${if_up enp6s0}
+${color1}LAN:${color2}${alignr}${addr enp6s0}
+${color1}Up:${color2}${alignr}${upspeed enp6s0}
+${color1}${upspeedgraph enp6s0 20,295 668ABF}
+${color1}Total: ${color2}${alignr}${totalup enp6s0}
+${voffset -5}${color3}${hr}
+${color1}Down:${color2}${alignr}${downspeed enp6s0}
+${color1}${downspeedgraph enp6s0 20,295 668ABF}
+${color1}Total: ${color2}${alignr}${totaldown enp6s0}
+${endif}
 ]];
