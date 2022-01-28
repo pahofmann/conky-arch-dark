@@ -95,8 +95,9 @@ conky.config = {
 
 -- Gap between borders of screen and text
 -- same thing as passing -x at command line
+-- Gap Between 15px
 	gap_x = 50,
-	gap_y = 445,
+	gap_y = 398,
 
     lua_load = 'conky_sys_draw.lua',
     lua_draw_hook_pre = 'main',
