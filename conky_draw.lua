@@ -1,6 +1,6 @@
 require 'cairo'
 package.path = package.path .. ';' .. os.getenv("HOME") .. '/.conky/conky-draw/?.lua'
-require 'conky_disk_draw_config'
+require 'conky_draw_config'
 
 
 function hexa_to_rgb(color, alpha)
